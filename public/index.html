@@ -1,0 +1,21 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>API de The Office</title>
+</head>
+<body>
+    <h1>API de RANMA 1/2</h1>
+    <button onclick="fetchCharacters()">Ver Personajes</button>
+    <div id="output"></div>
+
+    <script>
+        async function fetchCharacters() {
+            const response = await fetch('/api/ranma');
+            const data = await response.json();
+            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
